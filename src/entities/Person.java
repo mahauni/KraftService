@@ -1,8 +1,9 @@
 package entities;
 
 public class Person {
+    private String Name;
 
-    Private name String;String
-
-
+    public Person(String name) {
+        Name = name;
+    }
 }

@@ -1,4 +1,4 @@
-package entities;
+package Enums;
 
 public enum ESG {
     ENVIROMENTAL("Enviromental"),

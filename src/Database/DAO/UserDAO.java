@@ -66,7 +66,7 @@ public class UserDAO {
 		}
 	}
 	
-	//selectALL
+	// selectALL
 	public List<User> select() throws SQLException {
 		List<User> users = new ArrayList<User>();
 		String sql = "SELECT * FROM USUARIOS";
@@ -88,5 +88,25 @@ public class UserDAO {
 		return users;
 	}
 	
-	//selectById
+	// selectById
+	public User selectById(Long id) throws SQLException {
+		User user = null;
+		String sql = "SELECT * FROM USUARIOS WHERE ID=?";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+		stmt.setLong(1, id);
+		ResultSet rs = stmt.executeQuery();
+
+		while (rs.next()) {
+			User user = new User();
+			user.setId(rs.getLong("ID"));
+			user.setName(rs.getString("NAME"));
+			user.setEmail(rs.getString("EMAIL"));
+			user.setPassword(rs.getString("SENHA"));
+			user.setRegisterDate(rs.getDate("DATAREGISTRO"));
+		}
+
+		rs.close();
+		stmt.close();
+		return user;
+	}
 }

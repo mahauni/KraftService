@@ -10,6 +10,8 @@ public class User {
 	private String password;
 	private Date registerDate = new Date(System.currentTimeMillis());
 
+	public User() {}
+
 	public User(long id, String name, String email, String password) {
 		this.id = id;
 		this.name = name;

@@ -67,7 +67,7 @@ public class UserDAO {
 	}
 	
 	// selectALL
-	public List<User> select() throws SQLException {
+	public List<User> selectAll() throws SQLException {
 		List<User> users = new ArrayList<User>();
 		String sql = "SELECT * FROM USUARIOS";
 		PreparedStatement stmt = connection.prepareStatement(sql);
@@ -97,7 +97,7 @@ public class UserDAO {
 		ResultSet rs = stmt.executeQuery();
 
 		while (rs.next()) {
-			User user = new User();
+			user = new User();
 			user.setId(rs.getLong("ID"));
 			user.setName(rs.getString("NAME"));
 			user.setEmail(rs.getString("EMAIL"));

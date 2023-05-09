@@ -9,7 +9,7 @@ public class Problem {
     private Person person;
     private ESG esg;
     private Location location;
-    private ArrayList<Action> actions;
+    private Solution solutions;
 
     public Problem() {
     }
@@ -23,14 +23,14 @@ public class Problem {
         this.location = location;
     }
 
-    public Problem(int id, String description, boolean completed, Person person, ESG esg, Location location, ArrayList<Action> actions) {
+    public Problem(int id, String description, boolean completed, Person person, ESG esg, Location location, Solution solutions) {
         this.id = id;
         this.description = description;
         this.completed = completed;
         this.person = person;
         this.esg = esg;
         this.location = location;
-        this.actions = actions;
+        this.solutions = solutions;
     }
 
     public int getId() {
@@ -81,11 +81,11 @@ public class Problem {
         this.location = location;
     }
 
-    public ArrayList<Action> getActions() {
-        return actions;
+    public Solution getActions() {
+        return solutions;
     }
 
-    public void setActions(ArrayList<Action> actions) {
-        this.actions = actions;
+    public void setActions(Solution solutions) {
+        this.solutions = solutions;
     }
 }

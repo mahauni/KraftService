@@ -1,6 +1,4 @@
-package JavaBeans;
-
-import java.util.ArrayList;
+package javaBeans;
 
 public class Problem {
     private int id;
@@ -9,7 +7,7 @@ public class Problem {
     private Person person;
     private ESG esg;
     private Location location;
-    private Solution solutions;
+    private Solution solution;
 
     public Problem() {
     }
@@ -23,14 +21,14 @@ public class Problem {
         this.location = location;
     }
 
-    public Problem(int id, String description, boolean completed, Person person, ESG esg, Location location, Solution solutions) {
+    public Problem(int id, String description, boolean completed, Person person, ESG esg, Location location, Solution solution) {
         this.id = id;
         this.description = description;
         this.completed = completed;
         this.person = person;
         this.esg = esg;
         this.location = location;
-        this.solutions = solutions;
+        this.solution = solution;
     }
 
     public int getId() {
@@ -81,11 +79,11 @@ public class Problem {
         this.location = location;
     }
 
-    public Solution getActions() {
-        return solutions;
+    public Solution getSolution() {
+        return solution;
     }
 
-    public void setActions(Solution solutions) {
-        this.solutions = solutions;
+    public void setSolution(Solution solution) {
+        this.solution = solution;
     }
 }

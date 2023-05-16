@@ -1,14 +1,14 @@
-package JavaBeans;
+package javaBeans;
 
 public class ESG {
     private int id;
-    private Enums.ESG esg;
+    private enums.ESG esg;
     private String description;
 
     public ESG() {
     }
 
-    public ESG(int id, Enums.ESG esg, String description) {
+    public ESG(int id, enums.ESG esg, String description) {
         this.id = id;
         this.esg = esg;
         this.description = description;
@@ -22,11 +22,11 @@ public class ESG {
         this.id = id;
     }
 
-    public Enums.ESG getEsg() {
+    public enums.ESG getEsg() {
         return esg;
     }
 
-    public void setEsg(Enums.ESG esg) {
+    public void setEsg(enums.ESG esg) {
         this.esg = esg;
     }
 

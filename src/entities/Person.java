@@ -1,12 +1,12 @@
-package Entities;
+package entities;
 
-import JavaBeans.Problem;
-import JavaBeans.URL;
+import javaBeans.Problem;
+import javaBeans.URL;
 
 import java.util.ArrayList;
 
 public class Person {
-    private JavaBeans.Person person;
+    private javaBeans.Person person;
     private ArrayList<URL> urls;
     private ArrayList<Problem> problems;
 }

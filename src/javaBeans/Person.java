@@ -1,21 +1,19 @@
-package JavaBeans;
-
-import java.util.ArrayList;
+package javaBeans;
 
 public class Person {
     private int id;
-    private String Email;
-    private String Telephone;
-    private String Alias;
+    private String email;
+    private String telephone;
+    private String name;
 
     public Person() {
     }
 
     public Person(int id, String email, String telephone, String alias) {
         this.id = id;
-        Email = email;
-        Telephone = telephone;
-        Alias = alias;
+        this.email = email;
+        this.telephone = telephone;
+        this.name = alias;
     }
 
     public int getId() {
@@ -27,26 +25,26 @@ public class Person {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getTelephone() {
-        return Telephone;
+        return telephone;
     }
 
     public void setTelephone(String telephone) {
-        Telephone = telephone;
+        this.telephone = telephone;
     }
 
-    public String getAlias() {
-        return Alias;
+    public String getName() {
+        return name;
     }
 
-    public void setAlias(String alias) {
-        Alias = alias;
+    public void setName(String name) {
+        this.name = name;
     }
 }

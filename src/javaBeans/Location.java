@@ -1,4 +1,4 @@
-package JavaBeans;
+package javaBeans;
 
 public class Location {
     private int id;

@@ -1,4 +1,4 @@
-package JavaBeans;
+package javaBeans;
 
 public class URL {
     private Location location;

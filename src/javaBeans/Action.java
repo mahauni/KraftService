@@ -1,9 +1,9 @@
-package JavaBeans;
+package javaBeans;
 
 public class Action {
-    private int id;
-    private String name;
-    private String description;
+        private int id;
+        private String name;
+        private String description;
 
     public Action() {
     }
@@ -36,5 +36,14 @@ public class Action {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Action { " +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                " }";
     }
 }

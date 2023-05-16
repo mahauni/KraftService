@@ -1,4 +1,4 @@
-package DataStructures;
+package dataStructures;
 
 public class GenericQueue<T> {
     private static class Node<T> {
@@ -18,6 +18,7 @@ public class GenericQueue<T> {
         if (first == null && last == null) {
             this.first = node;
             this.last = node;
+            return;
         }
 
         this.last.next = node;

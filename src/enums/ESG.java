@@ -1,9 +1,9 @@
-package Enums;
+package enums;
 
 public enum ESG {
-    ENVIROMENTAL("Enviromental"),
+    ENVIRONMENTAL("Environmental"),
     SOCIAL("Social"),
-    GOVERNAMENTAL("Governamental");
+    GOVERNMENTAL("Governmental");
 
     private String details;
 

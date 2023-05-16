@@ -1,15 +1,15 @@
-package Utils.DotEnv;
+package utils;
 
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DotEnv {
+public class UtilsDotEnv {
     Map<String, String> values;
 
-    public DotEnv() {
+    public UtilsDotEnv(String path) {
         try {
-            String currPath = new java.io.File("./.env").getCanonicalPath();
+            String currPath = new java.io.File(path).getCanonicalPath();
             File file = new File(currPath);
 
             Map<String, String> map = new HashMap<>();

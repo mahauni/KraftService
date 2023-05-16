@@ -1,6 +1,4 @@
-package Database.Connection;
-
-import Utils.DotEnv.DotEnv;
+package database.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,14 +9,13 @@ public class ConnectionFactory {
 	private final String passwd;
 	private final String user;
 
-	public ConnectionFactory() {
-		DotEnv values = new DotEnv();
-		this.url = values.getEnv("url");
-		this.passwd = values.getEnv("passwd");
-		this.user = values.getEnv("user");
+	public ConnectionFactory(String url, String passwd, String user) {
+		this.url = url;
+		this.passwd = passwd;
+		this.user = user;
 	}
 
-	public Connection conectar() {
+	public Connection connect() {
 		try {
 			return DriverManager.getConnection(this.url, this.user, this.passwd);
 		} catch (SQLException e) {

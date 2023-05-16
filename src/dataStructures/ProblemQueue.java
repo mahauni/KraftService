@@ -1,8 +1,8 @@
-package DataStructures;
+package dataStructures;
 
-import JavaBeans.Problem;
+import javaBeans.Problem;
 
-public class Queue {
+public class ProblemQueue {
     private static class Node {
         private final Problem data;
         private Node  next;
@@ -12,14 +12,17 @@ public class Queue {
         }
     }
 
+    private int length = 0;
     private Node first = null;
     private Node last = null;
 
     public void enqueue(Problem data) {
         Node node = new Node(data);
+        this.length += 1;
         if (first == null && last == null) {
             this.first = node;
             this.last = node;
+            return;
         }
 
         this.last.next = node;
@@ -32,6 +35,8 @@ public class Queue {
         if (this.first == null && this.last == null) {
             return null;
         }
+
+        this.length -= 1;
 
         if (this.first == this.last) {
             this.first = null;
@@ -48,5 +53,9 @@ public class Queue {
 
     public boolean isEmpty() {
         return this.first == null && this.last == null;
+    }
+
+    public int length() {
+        return this.length;
     }
 }

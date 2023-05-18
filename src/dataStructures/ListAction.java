@@ -1,20 +1,24 @@
 package dataStructures;
 
-public class GenericQueue<T> {
-    private static class Node<T> {
-        private final T data;
-        private Node<T> next;
+import javaBeans.Action;
 
-        public Node(T data) {
+public class ListAction {
+    private static class Node {
+        private final Action data;
+        private Node next;
+
+        public Node(Action data) {
             this.data = data;
         }
     }
 
-    private Node<T> first = null;
-    private Node<T> last = null;
+    private int length = 0;
+    private Node first = null;
+    private Node last = null;
 
-    public void enqueue(T data) {
-        Node<T> node = new Node<T>(data);
+    public void enqueue(Action data) {
+        Node node = new Node(data);
+        this.length += 1;
         if (first == null && last == null) {
             this.first = node;
             this.last = node;
@@ -25,12 +29,14 @@ public class GenericQueue<T> {
         this.last = node;
     }
 
-    public T dequeue() {
-        Node<T> node = this.first;
+    public Action dequeue() {
+        Node node = this.first;
 
         if (this.first == null && this.last == null) {
             return null;
         }
+
+        this.length -= 1;
 
         if (this.first == this.last) {
             this.first = null;
@@ -47,5 +53,17 @@ public class GenericQueue<T> {
 
     public boolean isEmpty() {
         return this.first == null && this.last == null;
+    }
+
+    public int length() {
+        return this.length;
+    }
+
+    public void printActions() {
+        Node curr = first;
+        while (curr != null) {
+            System.out.println(curr.data);
+            curr = curr.next;
+        }
     }
 }

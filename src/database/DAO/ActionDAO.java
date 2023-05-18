@@ -1,5 +1,7 @@
 package database.DAO;
 
+// changed javabean and need to fix this bullshit
+
 import database.connection.DatabaseConnection;
 import javaBeans.Action;
 

@@ -1,24 +1,20 @@
 package dataStructures;
 
-import javaBeans.Problem;
+public class ListGeneric<T> {
+    private static class Node<T> {
+        private final T data;
+        private Node<T> next;
 
-public class ProblemQueue {
-    private static class Node {
-        private final Problem data;
-        private Node  next;
-
-        public Node(Problem data) {
+        public Node(T data) {
             this.data = data;
         }
     }
 
-    private int length = 0;
-    private Node first = null;
-    private Node last = null;
+    private Node<T> first = null;
+    private Node<T> last = null;
 
-    public void enqueue(Problem data) {
-        Node node = new Node(data);
-        this.length += 1;
+    public void enqueue(T data) {
+        Node<T> node = new Node<T>(data);
         if (first == null && last == null) {
             this.first = node;
             this.last = node;
@@ -29,14 +25,12 @@ public class ProblemQueue {
         this.last = node;
     }
 
-    public Problem dequeue() {
-        Node node = this.first;
+    public T dequeue() {
+        Node<T> node = this.first;
 
         if (this.first == null && this.last == null) {
             return null;
         }
-
-        this.length -= 1;
 
         if (this.first == this.last) {
             this.first = null;
@@ -53,9 +47,5 @@ public class ProblemQueue {
 
     public boolean isEmpty() {
         return this.first == null && this.last == null;
-    }
-
-    public int length() {
-        return this.length;
     }
 }

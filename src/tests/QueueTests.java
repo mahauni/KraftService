@@ -1,7 +1,7 @@
 package tests;
 
-import dataStructures.ActionQueue;
-import dataStructures.ProblemQueue;
+import dataStructures.ListAction;
+import dataStructures.ListProblem;
 import javaBeans.*;
 import utils.UtilsEncode;
 
@@ -17,11 +17,11 @@ public class QueueTests {
 
         ESG[] esgs = { social, govern, enviro };
 
-        ProblemQueue socialList = new ProblemQueue();
-        ProblemQueue governList = new ProblemQueue();
-        ProblemQueue enviroList = new ProblemQueue();
+        ListProblem socialList = new ListProblem();
+        ListProblem governList = new ListProblem();
+        ListProblem enviroList = new ListProblem();
 
-        ActionQueue listAction = new ActionQueue();
+        ListAction listAction = new ListAction();
         int numberActions = 1150;
         for (int i = 1; i <= numberActions; i++) {
             Action action = new Action(i, "Hash of " + i, UtilsEncode.encode(Integer.toString(i)));
@@ -31,7 +31,7 @@ public class QueueTests {
         int numberProblems = 1000;
         for (int i = 1; i <= numberProblems; i++) {
             int numActions = rand.nextInt(3);
-            ActionQueue actions = new ActionQueue();
+            ListAction actions = new ListAction();
             for (int j = 0; j < numActions; j++) {
                 actions.enqueue(listAction.dequeue());
             }

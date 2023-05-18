@@ -1,24 +1,22 @@
 package javaBeans;
 
-import dataStructures.ActionQueue;
-
-import java.util.ArrayList;
+import dataStructures.ListAction;
 
 public class Solution {
-    private ActionQueue actions;
+    private ListAction actions;
 
     public Solution() {
     }
 
-    public Solution(ActionQueue actions) {
+    public Solution(ListAction actions) {
         this.actions = actions;
     }
 
-    public ActionQueue getActions() {
+    public ListAction getActions() {
         return actions;
     }
 
-    public void setActions(ActionQueue actions) {
+    public void setActions(ListAction actions) {
         this.actions = actions;
     }
 }

@@ -1,5 +1,7 @@
 package database.DAO;
 
+// Make the list of url per person and maybe for location too? idk but certanly for person
+
 import database.connection.DatabaseConnection;
 import javaBeans.Person;
 

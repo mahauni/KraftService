@@ -1,5 +1,7 @@
 package database.DAO;
 
+// fix this because we have one more camp to fill
+
 import database.connection.DatabaseConnection;
 import javaBeans.Location;
 

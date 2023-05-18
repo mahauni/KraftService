@@ -1,13 +1,13 @@
 package dataStructures;
 
-import javaBeans.Action;
+import javaBeans.Problem;
 
-public class ActionQueue {
+public class ListProblem {
     private static class Node {
-        private final Action data;
-        private Node next;
+        private final Problem data;
+        private Node  next;
 
-        public Node(Action data) {
+        public Node(Problem data) {
             this.data = data;
         }
     }
@@ -16,7 +16,7 @@ public class ActionQueue {
     private Node first = null;
     private Node last = null;
 
-    public void enqueue(Action data) {
+    public void enqueue(Problem data) {
         Node node = new Node(data);
         this.length += 1;
         if (first == null && last == null) {
@@ -29,7 +29,7 @@ public class ActionQueue {
         this.last = node;
     }
 
-    public Action dequeue() {
+    public Problem dequeue() {
         Node node = this.first;
 
         if (this.first == null && this.last == null) {
@@ -57,13 +57,5 @@ public class ActionQueue {
 
     public int length() {
         return this.length;
-    }
-
-    public void printActions() {
-        Node curr = first;
-        while (curr != null) {
-            System.out.println(curr.data);
-            curr = curr.next;
-        }
     }
 }

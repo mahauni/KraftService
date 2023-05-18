@@ -4,11 +4,12 @@ import database.connection.DatabaseConnection;
 import javaBeans.Problem;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class ProblemDAO {
     private static Connection connection;
 
-    public ProblemDAO() {
+    public ProblemDAO() throws SQLException {
         connection = DatabaseConnection.connect();
     }
 

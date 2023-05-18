@@ -4,11 +4,12 @@ import database.connection.DatabaseConnection;
 import javaBeans.URL;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class UrlDAO {
     private static Connection connection;
 
-    public UrlDAO() {
+    public UrlDAO() throws SQLException {
         connection = DatabaseConnection.connect();
     }
 

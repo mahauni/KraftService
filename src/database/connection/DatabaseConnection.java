@@ -2,22 +2,23 @@ package database.connection;
 
 import utils.UtilsDotEnv;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static Connection connection;
+    private static DataSource connections;
 
     // singleton
-    public static Connection connect() {
-        if (connection == null) {
+    public static Connection connect() throws SQLException {
+        if (connections == null) {
             UtilsDotEnv values = new UtilsDotEnv("./.env");
             String url = values.getEnv("url");
             String passwd = values.getEnv("passwd");
             String user = values.getEnv("user");
-            ConnectionFactory connect = new ConnectionFactory(url, passwd, user);
-            connection = connect.connect();
+            DatabasePools connections = new DatabasePools(url, passwd, user);
         }
 
-        return connection;
+        return connections.getConnection();
     }
 }

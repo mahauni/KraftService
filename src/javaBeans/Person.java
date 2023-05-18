@@ -2,9 +2,9 @@ package javaBeans;
 
 public class Person {
     private int id;
+    private String name;
     private String email;
     private String telephone;
-    private String name;
 
     public Person() {
     }

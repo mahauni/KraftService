@@ -3,15 +3,13 @@ package javaBeans;
 public class Department {
     private int id;
     private String name;
-    private Responsibility responsibility;
 
     public Department() {
     }
 
-    public Department(int id, String name, Responsibility responsibility) {
+    public Department(int id, String name) {
         this.id = id;
         this.name = name;
-        this.responsibility = responsibility;
     }
 
     public int getId() {
@@ -28,13 +26,5 @@ public class Department {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Responsibility getResponsibility() {
-        return responsibility;
-    }
-
-    public void setResponsibility(Responsibility responsibility) {
-        this.responsibility = responsibility;
     }
 }

@@ -3,20 +3,30 @@ package javaBeans;
 import java.util.ArrayList;
 
 public class Responsibility {
-    private ArrayList<Action> responsibility;
+    private int idDepartment;
+    private int idAction;
 
     public Responsibility() {
     }
 
-    public Responsibility(ArrayList<Action> responsibility) {
-        this.responsibility = responsibility;
+    public Responsibility(int idDepartment, int idAction) {
+        this.idDepartment = idDepartment;
+        this.idAction = idAction;
     }
 
-    public ArrayList<Action> getResponsibility() {
-        return responsibility;
+    public int getIdDepartment() {
+        return idDepartment;
     }
 
-    public void setResponsibility(ArrayList<Action> responsibility) {
-        this.responsibility = responsibility;
+    public void setIdDepartment(int idDepartment) {
+        this.idDepartment = idDepartment;
+    }
+
+    public int getIdAction() {
+        return idAction;
+    }
+
+    public void setIdAction(int idAction) {
+        this.idAction = idAction;
     }
 }

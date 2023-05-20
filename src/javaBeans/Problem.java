@@ -4,31 +4,20 @@ public class Problem {
     private int id;
     private String description;
     private boolean completed;
-    private Person person;
-    private ESG esg;
-    private Location location;
-    private Solution solution;
+    private int idPerson;
+    private int idEsg;
+    private int idLocation;
 
     public Problem() {
     }
 
-    public Problem(int id, String description, boolean completed, Person person, ESG esg, Location location) {
+    public Problem(int id, String description, boolean completed, int idPerson, int idEsg, int idLocation) {
         this.id = id;
         this.description = description;
         this.completed = completed;
-        this.person = person;
-        this.esg = esg;
-        this.location = location;
-    }
-
-    public Problem(int id, String description, boolean completed, Person person, ESG esg, Location location, Solution solution) {
-        this.id = id;
-        this.description = description;
-        this.completed = completed;
-        this.person = person;
-        this.esg = esg;
-        this.location = location;
-        this.solution = solution;
+        this.idPerson = idPerson;
+        this.idEsg = idEsg;
+        this.idLocation = idLocation;
     }
 
     public int getId() {
@@ -55,35 +44,27 @@ public class Problem {
         this.completed = completed;
     }
 
-    public Person getPerson() {
-        return person;
+    public int getIdPerson() {
+        return idPerson;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setIdPerson(int idPerson) {
+        this.idPerson = idPerson;
     }
 
-    public ESG getEsg() {
-        return esg;
+    public int getIdEsg() {
+        return idEsg;
     }
 
-    public void setEsg(ESG esg) {
-        this.esg = esg;
+    public void setIdEsg(int idEsg) {
+        this.idEsg = idEsg;
     }
 
-    public Location getLocation() {
-        return location;
+    public int getIdLocation() {
+        return idLocation;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
-    public Solution getSolution() {
-        return solution;
-    }
-
-    public void setSolution(Solution solution) {
-        this.solution = solution;
+    public void setIdLocation(int idLocation) {
+        this.idLocation = idLocation;
     }
 }

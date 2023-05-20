@@ -1,33 +1,33 @@
 package javaBeans;
 
 public class URL {
-    private Location location;
-    private Person person;
+    private int idPerson;
+    private int idLocation;
     private String URL;
 
     public URL() {
     }
 
-    public URL(Location location, Person person, String URL) {
-        this.location = location;
-        this.person = person;
+    public URL(int idPerson, int idLocation, String URL) {
+        this.idPerson = idPerson;
+        this.idLocation = idLocation;
         this.URL = URL;
     }
 
-    public Location getLocation() {
-        return location;
+    public int getIdPerson() {
+        return idPerson;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public void setIdPerson(int idPerson) {
+        this.idPerson = idPerson;
     }
 
-    public Person getPerson() {
-        return person;
+    public int getIdLocation() {
+        return idLocation;
     }
 
-    public void setPerson(Person person) {
-        this.person = person;
+    public void setIdLocation(int idLocation) {
+        this.idLocation = idLocation;
     }
 
     public String getURL() {

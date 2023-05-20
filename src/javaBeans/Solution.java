@@ -1,7 +1,5 @@
 package javaBeans;
 
-import dataStructures.ListAction;
-
 public class Solution {
     private int idAction;
     private int idProblem;

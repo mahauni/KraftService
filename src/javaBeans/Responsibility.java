@@ -1,7 +1,5 @@
 package javaBeans;
 
-import java.util.ArrayList;
-
 public class Responsibility {
     private int idDepartment;
     private int idAction;

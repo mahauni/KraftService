@@ -2,7 +2,12 @@ package tests;
 
 import dataStructures.ListAction;
 import dataStructures.ListProblem;
-import javaBeans.*;
+import entities.Person;
+import entities.Problem;
+import entities.Solution;
+import javaBeans.Action;
+import javaBeans.ESG;
+import javaBeans.Location;
 import utils.UtilsEncode;
 
 import java.util.Random;
@@ -36,7 +41,9 @@ public class QueueTests {
                 actions.enqueue(listAction.dequeue());
             }
             Solution solution = new Solution(actions);
-            Problem problem = new Problem(i, "Problem " + i, rand.nextBoolean(), new Person(), esgs[rand.nextInt(3)], new Location(), solution);
+            int esgInt = rand.nextInt(3);
+            // Using the problem(javaBeans.problem, entities.Person, javaBeans.ESG, javaBeans.Location)
+            Problem problem = new Problem(new javaBeans.Problem(i, "Problem " + i, rand.nextBoolean(), 1, esgInt, 1), new Person(), esgs[esgInt], new Location(), solution);
 
             switch (problem.getEsg().getEsg()) {
                 case ENVIRONMENTAL -> enviroList.enqueue(problem);
@@ -48,27 +55,27 @@ public class QueueTests {
         System.out.println("Environmental list length: " + enviroList.length());
         for (int i = 0; i < 7; i++) {
             Problem problem = enviroList.dequeue();
-            System.out.println("id: " + problem.getId() + " | How many actions: " + problem.getSolution().getActions().length());
+            System.out.println("id: " + problem.getProblem().getId() + " | How many actions: " + problem.getSolution().getListAction().length());
             System.out.println("Actions:");
-            problem.getSolution().getActions().printActions();
+            problem.getSolution().getListAction().printActions();
             System.out.println();
         }
 
         System.out.println("Social list length: " + socialList.length());
         for (int i = 0; i < 7; i++) {
             Problem problem = socialList.dequeue();
-            System.out.println("id: " + problem.getId() + " | How many actions: " + problem.getSolution().getActions().length());
+            System.out.println("id: " + problem.getProblem().getId() + " | How many actions: " + problem.getSolution().getListAction().length());
             System.out.println("Actions:");
-            problem.getSolution().getActions().printActions();
+            problem.getSolution().getListAction().printActions();
             System.out.println();
         }
 
         System.out.println("Governmental list length: " + governList.length());
         for (int i = 0; i < 7; i++) {
             Problem problem = governList.dequeue();
-            System.out.println("id: " + problem.getId() + " | How many actions: " + problem.getSolution().getActions().length());
+            System.out.println("id: " + problem.getProblem().getId() + " | How many actions: " + problem.getSolution().getListAction().length());
             System.out.println("Actions:");
-            problem.getSolution().getActions().printActions();
+            problem.getSolution().getListAction().printActions();
             System.out.println();
         }
 

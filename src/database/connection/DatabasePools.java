@@ -12,13 +12,13 @@ public class DatabasePools {
 	private final String user;
 	private static DataSource connectionPools = null;
 
-	public DatabasePools(String url, String passwd, String user) {
+	DatabasePools(String url, String passwd, String user) {
 		this.url = url;
 		this.passwd = passwd;
 		this.user = user;
 	}
 
-	public DataSource getPools() throws SQLException {
+	DataSource getPools() throws SQLException {
 		if (connectionPools == null) {
 			final ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
 			comboPooledDataSource.setJdbcUrl(this.url);

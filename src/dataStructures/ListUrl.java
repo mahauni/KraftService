@@ -1,13 +1,13 @@
 package dataStructures;
 
-import entities.Problem;
+import javaBeans.URL;
 
-public class ListProblem {
+public class ListUrl {
     private static class Node {
-        private final Problem data;
+        private final URL data;
         private Node  next;
 
-        public Node(Problem data) {
+        public Node(URL data) {
             this.data = data;
         }
     }
@@ -16,7 +16,7 @@ public class ListProblem {
     private Node first = null;
     private Node last = null;
 
-    public void enqueue(Problem data) {
+    public void enqueue(URL data) {
         Node node = new Node(data);
         this.length += 1;
         if (first == null && last == null) {
@@ -29,7 +29,7 @@ public class ListProblem {
         this.last = node;
     }
 
-    public Problem dequeue() {
+    public URL dequeue() {
         Node node = this.first;
 
         if (this.first == null && this.last == null) {

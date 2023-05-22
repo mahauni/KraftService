@@ -16,7 +16,8 @@ public class DatabaseConnection {
             String url = values.getEnv("url");
             String passwd = values.getEnv("passwd");
             String user = values.getEnv("user");
-            DatabasePools connections = new DatabasePools(url, passwd, user);
+            DatabasePools pools = new DatabasePools(url, passwd, user);
+            connections = pools.getPools();
         }
 
         return connections.getConnection();

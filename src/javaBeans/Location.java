@@ -7,6 +7,10 @@ public class Location {
     public Location() {
     }
 
+    public Location(String location) {
+        this.location = location;
+    }
+
     public Location(int id, String location) {
         this.id = id;
         this.location = location;

@@ -14,6 +14,11 @@ public class ESG {
         this.description = description;
     }
 
+    public ESG(enums.ESG esg, String description) {
+        this.esg = esg;
+        this.description = description;
+    }
+
     public int getId() {
         return id;
     }

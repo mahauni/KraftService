@@ -11,6 +11,14 @@ public class Problem {
     public Problem() {
     }
 
+    public Problem(String description, boolean completed, int idPerson, int idEsg, int idLocation) {
+        this.description = description;
+        this.completed = completed;
+        this.idPerson = idPerson;
+        this.idEsg = idEsg;
+        this.idLocation = idLocation;
+    }
+
     public Problem(int id, String description, boolean completed, int idPerson, int idEsg, int idLocation) {
         this.id = id;
         this.description = description;

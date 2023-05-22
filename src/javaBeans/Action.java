@@ -12,6 +12,13 @@ public class Action {
     public Action() {
     }
 
+    public Action(String name, String description, Date start, Date finish) {
+        this.name = name;
+        this.description = description;
+        this.start = start;
+        this.finish = finish;
+    }
+
     public Action(int id, String name, String description) {
         this.id = id;
         this.name = name;

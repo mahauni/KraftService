@@ -51,6 +51,14 @@ public class ListAction {
         return node.data;
     }
 
+    public Action peak() {
+        return this.first.data;
+    }
+
+    public Action last() {
+        return this.last.data;
+    }
+
     public boolean isEmpty() {
         return this.first == null && this.last == null;
     }

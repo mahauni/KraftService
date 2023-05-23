@@ -51,6 +51,14 @@ public class ListUrl {
         return node.data;
     }
 
+    public URL peak() {
+        return this.first.data;
+    }
+
+    public URL last() {
+        return this.last.data;
+    }
+
     public boolean isEmpty() {
         return this.first == null && this.last == null;
     }

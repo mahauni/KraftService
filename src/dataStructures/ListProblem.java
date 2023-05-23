@@ -51,6 +51,14 @@ public class ListProblem {
         return node.data;
     }
 
+    public Problem peak() {
+        return this.first.data;
+    }
+
+    public Problem last() {
+        return this.last.data;
+    }
+
     public boolean isEmpty() {
         return this.first == null && this.last == null;
     }

@@ -60,4 +60,15 @@ public class Problem {
     public void setSolution(Solution solution) {
         this.solution = solution;
     }
+
+    @Override
+    public String toString() {
+        return "Problem { " +
+                "problem=" + problem.getDescription() +
+                ", esg=" + esg.getEsg().toString()+
+                ", person=" + person.getPerson().getName() +
+                ", location=" + location.getLocation() +
+                ", solutions=" + solution.getListAction().length() +
+                " }";
+    }
 }

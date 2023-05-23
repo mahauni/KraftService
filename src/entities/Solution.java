@@ -6,6 +6,7 @@ public class Solution {
     private ListAction listAction;
 
     public Solution() {
+        this.listAction = new ListAction();
     }
 
     public Solution(ListAction listAction) {

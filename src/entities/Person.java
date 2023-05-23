@@ -40,4 +40,15 @@ public class Person {
     public void setProblems(ListProblem problems) {
         this.problems = problems;
     }
+
+    // review this later to see if is needed to add more
+    @Override
+    public String toString() {
+        return "Person { " +
+                "person name=" + person.getName() +
+                "person email=" + person.getEmail() +
+                ", urls=" + urls.length() +
+                ", problems=" + problems.length() +
+                " }";
+    }
 }

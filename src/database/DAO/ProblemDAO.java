@@ -18,6 +18,7 @@ public class ProblemDAO {
     }
 
     // make a way to have a boolean convert to either 0 or 1 based on false and true
+    // finish this one
     public void insert(Problem problem) {
         String sql = "INSERT INTO PROBLEMS(DESCRIPTION, COMPLETED, IDPERSON, IDESG, IDLOCATION) VALUES(?, ?, ?, ?, ?)";
 
@@ -25,10 +26,10 @@ public class ProblemDAO {
             PreparedStatement stmt = connection.prepareStatement(sql);
 
             stmt.setString(1, problem.getDescription());
-            stmt.setString(2, problem.getDescription());
-            stmt.setString(3, problem.getDescription());
-            stmt.setString(4, problem.getDescription());
-            stmt.setString(5, problem.getDescription());
+            stmt.setBoolean(2, problem.isCompleted());
+            stmt.setInt(3, problem.getIdPerson());
+            stmt.setInt(4, problem.getIdEsg());
+            stmt.setInt(5, problem.getIdLocation());
 
             stmt.execute();
             stmt.close();
@@ -51,12 +52,17 @@ public class ProblemDAO {
     }
 
     public void update(Problem problem) {
-        String sql = "UPDATE PROBLEMS SET NAME=?, EMAIL=?, TELEPHONE=? WHERE ID=?";
+        String sql = "UPDATE PROBLEMS SET DESCRIPTION=?, COMPLETED=?, IDPERSON=?, IDESG=?, IDLOCATION=?  WHERE ID=?";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
 
-            stmt.setInt(4, problem.getId());
+            stmt.setString(1, problem.getDescription());
+            stmt.setBoolean(2, problem.isCompleted());
+            stmt.setInt(3, problem.getIdPerson());
+            stmt.setInt(4, problem.getIdEsg());
+            stmt.setInt(5, problem.getIdLocation());
+            stmt.setInt(6, problem.getId());
 
             stmt.execute();
             stmt.close();
@@ -75,7 +81,11 @@ public class ProblemDAO {
             while (rs.next()) {
                 Problem problem = new Problem();
                 problem.setId(rs.getInt("ID"));
-
+                problem.setDescription(rs.getString("DESCRIPTION"));
+                problem.setCompleted(rs.getBoolean("COMPLETED"));
+                problem.setIdPerson(rs.getInt("IDPERSON"));
+                problem.setIdEsg(rs.getInt("IDESG"));
+                problem.setIdLocation(rs.getInt("IDLOCATION"));
 
                 problems.add(problem);
             }
@@ -98,6 +108,11 @@ public class ProblemDAO {
             while (rs.next()) {
                 problem = new Problem();
                 problem.setId(rs.getInt("ID"));
+                problem.setDescription(rs.getString("DESCRIPTION"));
+                problem.setCompleted(rs.getBoolean("COMPLETED"));
+                problem.setIdPerson(rs.getInt("IDPERSON"));
+                problem.setIdEsg(rs.getInt("IDESG"));
+                problem.setIdLocation(rs.getInt("IDLOCATION"));
             }
 
             rs.close();

@@ -1,17 +1,17 @@
 package entities;
 
 import dataStructures.ListProblem;
-import dataStructures.ListUrl;
+import dataStructures.ListProfile;
 
 public class Person {
     private javaBeans.Person person;
-    private ListUrl urls;
+    private ListProfile urls;
     private ListProblem problems;
 
     public Person() {
     }
 
-    public Person(javaBeans.Person person, ListUrl urls, ListProblem problems) {
+    public Person(javaBeans.Person person, ListProfile urls, ListProblem problems) {
         this.person = person;
         this.urls = urls;
         this.problems = problems;
@@ -25,11 +25,11 @@ public class Person {
         this.person = person;
     }
 
-    public ListUrl getUrls() {
+    public ListProfile getUrls() {
         return urls;
     }
 
-    public void setUrls(ListUrl urls) {
+    public void setUrls(ListProfile urls) {
         this.urls = urls;
     }
 

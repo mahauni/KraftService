@@ -1,14 +1,14 @@
 package javaBeans;
 
-public class URL {
+public class Profile {
     private int idPerson;
     private int idLocation;
     private String URL;
 
-    public URL() {
+    public Profile() {
     }
 
-    public URL(int idPerson, int idLocation, String URL) {
+    public Profile(int idPerson, int idLocation, String URL) {
         this.idPerson = idPerson;
         this.idLocation = idLocation;
         this.URL = URL;

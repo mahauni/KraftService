@@ -19,8 +19,9 @@ public class PersonDAO {
         connection = DatabaseConnection.connect();
     }
 
+    // make the telephone to be nullif
     public void insert(Person person) {
-        String sql = "INSERT INTO PERSONS(NAME, EMAIL, TELEPHONE) VALUES(?, ?, ?)";
+        String sql = "INSERT INTO PERSONS(NAME, EMAIL, TELEPHONE) VALUES(?, ?, NULLIF(?, null))";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -50,7 +51,7 @@ public class PersonDAO {
     }
 
     public void update(Person person) {
-        String sql = "UPDATE PERSONS SET NAME=?, EMAIL=?, TELEPHONE=? WHERE ID=?";
+        String sql = "UPDATE PERSONS SET NAME=?, EMAIL=?, TELEPHONE=NULLIF(?, null) WHERE ID=?";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);

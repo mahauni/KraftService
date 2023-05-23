@@ -1,15 +1,15 @@
 package entities;
 
-import dataStructures.ListUrl;
+import dataStructures.ListProfile;
 
 public class Location {
     private javaBeans.Location location;
-    private ListUrl urls;
+    private ListProfile urls;
 
     public Location() {
     }
 
-    public Location(javaBeans.Location location, ListUrl urls) {
+    public Location(javaBeans.Location location, ListProfile urls) {
         this.location = location;
         this.urls = urls;
     }
@@ -22,11 +22,11 @@ public class Location {
         this.location = location;
     }
 
-    public ListUrl getUrls() {
+    public ListProfile getUrls() {
         return urls;
     }
 
-    public void setUrls(ListUrl urls) {
+    public void setUrls(ListProfile urls) {
         this.urls = urls;
     }
 }

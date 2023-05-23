@@ -1,13 +1,13 @@
 package dataStructures;
 
-import javaBeans.URL;
+import javaBeans.Profile;
 
-public class ListUrl {
+public class ListProfile {
     private static class Node {
-        private final URL data;
+        private final Profile data;
         private Node  next;
 
-        public Node(URL data) {
+        public Node(Profile data) {
             this.data = data;
         }
     }
@@ -16,7 +16,7 @@ public class ListUrl {
     private Node first = null;
     private Node last = null;
 
-    public void enqueue(URL data) {
+    public void enqueue(Profile data) {
         Node node = new Node(data);
         this.length += 1;
         if (first == null && last == null) {
@@ -29,7 +29,7 @@ public class ListUrl {
         this.last = node;
     }
 
-    public URL dequeue() {
+    public Profile dequeue() {
         Node node = this.first;
 
         if (this.first == null && this.last == null) {
@@ -51,11 +51,11 @@ public class ListUrl {
         return node.data;
     }
 
-    public URL peak() {
+    public Profile peak() {
         return this.first.data;
     }
 
-    public URL last() {
+    public Profile last() {
         return this.last.data;
     }
 

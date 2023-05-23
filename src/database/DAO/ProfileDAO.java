@@ -1,7 +1,7 @@
 package database.DAO;
 
 import database.connection.DatabaseConnection;
-import javaBeans.Solution;
+import javaBeans.Profile;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,21 +10,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SolutionDAO {
+public class ProfileDAO {
     private static Connection connection;
 
-    public SolutionDAO() throws SQLException {
+    public ProfileDAO() throws SQLException {
         connection = DatabaseConnection.connect();
     }
 
-    public void insert(Solution solution) {
-        String sql = "INSERT INTO SOLUTIONS(IDPROBLEM, IDACTION) VALUES(?, ?)";
+    public void insert(Profile profile) {
+        String sql = "INSERT INTO PROFILES(URL, IDPERSON, IDLOCATION) VALUES(?, ?, ?)";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
 
-            stmt.setInt(1, solution.getIdProblem());
-            stmt.setInt(2, solution.getIdAction());
+            stmt.setString(1, profile.getURL());
+            stmt.setInt(2, profile.getIdPerson());
+            stmt.setInt(3, profile.getIdLocation());
 
             stmt.execute();
             stmt.close();
@@ -33,11 +34,11 @@ public class SolutionDAO {
         }
     }
 
-    public void delete(int id) {
-        String sql = "DELETE FROM SOLUTIONS WHERE ID=?";
+    public void delete(String id) {
+        String sql = "DELETE FROM PROFILES WHERE ID=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setInt(1, id);
+            stmt.setString(1, id);
 
             stmt.execute();
             stmt.close();
@@ -46,15 +47,15 @@ public class SolutionDAO {
         }
     }
 
-    public void update(Solution solution) {
-        String sql = "UPDATE SOLUTIONS SET IDPROBLEM=?, IDACTION=? WHERE ID=?";
+    public void update(Profile profile) {
+        String sql = "UPDATE PROFILES SET IDPERSON=?, IDLOCATION=? WHERE ID=?";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
 
-            stmt.setInt(1, solution.getIdProblem());
-            stmt.setInt(2, solution.getIdAction());
-            stmt.setInt(3, (solution.getIdProblem() * 10) + solution.getIdAction());
+            stmt.setInt(1, profile.getIdPerson());
+            stmt.setInt(2, profile.getIdLocation());
+            stmt.setString(3, profile.getURL());
 
             stmt.execute();
             stmt.close();
@@ -63,40 +64,42 @@ public class SolutionDAO {
         }
     }
 
-    public List<Solution> selectAll() {
-        List<Solution> solutions = new ArrayList<>();
-        String sql = "SELECT * FROM SOLUTIONS";
+    public List<Profile> selectAll() {
+        List<Profile> urls = new ArrayList<>();
+        String sql = "SELECT * FROM PROFILES";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                Solution solution = new Solution();
-                solution.setIdProblem(rs.getInt("IDPROBLEM"));
-                solution.setIdAction(rs.getInt("IDACTION"));
+                Profile profile = new Profile();
+                profile.setURL(rs.getString("URL"));
+                profile.setIdPerson(rs.getInt("IDPERSON"));
+                profile.setIdLocation(rs.getInt("IDLOCATION"));
 
-                solutions.add(solution);
+                urls.add(profile);
             }
             rs.close();
             stmt.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return solutions;
+        return urls;
     }
 
-    public Solution selectById(int id) {
-        Solution solution = null;
-        String sql = "SELECT * FROM SOLUTIONS WHERE ID=?";
+    public Profile selectById(int id) {
+        Profile profile = null;
+        String sql = "SELECT * FROM PROFILES WHERE ID=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                solution = new Solution();
-                solution.setIdProblem(rs.getInt("IDPROBLEM"));
-                solution.setIdAction(rs.getInt("IDACTION"));
+                profile = new Profile();
+                profile.setURL(rs.getString("URL"));
+                profile.setIdPerson(rs.getInt("IDPERSON"));
+                profile.setIdLocation(rs.getInt("IDLOCATION"));
             }
 
             rs.close();
@@ -104,6 +107,6 @@ public class SolutionDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return solution;
+        return profile;
     }
 }

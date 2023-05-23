@@ -2,7 +2,7 @@ package tests;
 
 import dataStructures.ListAction;
 import dataStructures.ListProblem;
-import dataStructures.ListUrl;
+import dataStructures.ListProfile;
 import entities.Person;
 import entities.Problem;
 import entities.Solution;
@@ -70,7 +70,7 @@ public class QueueTests {
                 actions.enqueue(actionList.dequeue());
             }
             Solution solution = new Solution(actions);
-            Person person = new Person(new javaBeans.Person(1, "TestName", "TestEmail@gmail.com"), new ListUrl(), new ListProblem());
+            Person person = new Person(new javaBeans.Person(1, "TestName", "TestEmail@gmail.com"), new ListProfile(), new ListProblem());
             int esgInt = rand.nextInt(3);
             // Using the problem(javaBeans.problem, entities.Person, javaBeans.ESG, javaBeans.Location)
             Problem problem = new Problem(new javaBeans.Problem(i, "Problem " + i, rand.nextBoolean(), person.getPerson().getId(), esgInt, 1), person, esgs[esgInt], new Location(), solution);
@@ -257,7 +257,7 @@ public class QueueTests {
         String description = sc.nextLine();
         Problem problem = new Problem(
                 new javaBeans.Problem(list.last().getProblem().getId() + 1, description, false,  2, esgId, 1),
-                new Person(new javaBeans.Person(2, name, email), new ListUrl(), new ListProblem()),
+                new Person(new javaBeans.Person(2, name, email), new ListProfile(), new ListProblem()),
                 esg, new Location(), new Solution());
         System.out.println("Problem added to the list:");
         System.out.println(problem);

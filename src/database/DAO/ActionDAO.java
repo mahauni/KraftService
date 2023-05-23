@@ -20,13 +20,15 @@ public class ActionDAO {
     }
 
     public void insert(Action action) {
-        String sql = "INSERT INTO ACTION(NAME, DESCRIPTION) VALUES(?, ?)";
+        String sql = "INSERT INTO ACTIONS(NAME, DESCRIPTION, START, FINISH) VALUES(?, ?, CAST(NULLIF(?, null) AS DATE), CAST(NULLIF(?, null) AS DATE))";
 
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
 
             stmt.setString(1, action.getName());
             stmt.setString(2, action.getDescription());
+            stmt.setDate(3, action.getStart());
+            stmt.setDate(4, action.getFinish());
 
             stmt.execute();
             stmt.close();
@@ -49,14 +51,15 @@ public class ActionDAO {
     }
 
     public void update(Action action) {
-        String sql = "UPDATE ACTIONS SET NAME=?, DESCRIPTION=? WHERE ID=?";
-
+        String sql = "UPDATE ACTIONS SET NAME=?, DESCRIPTION=?, START=CAST(NULLIF(?, null) AS DATE), FINISH=CAST(NULLIF(?, null) AS DATE) WHERE ID=?";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
 
             stmt.setString(1, action.getName());
             stmt.setString(2, action.getDescription());
-            stmt.setInt(3, action.getId());
+            stmt.setDate(3, action.getStart());
+            stmt.setDate(4, action.getFinish());
+            stmt.setInt(5, action.getId());
 
             stmt.execute();
             stmt.close();
@@ -77,6 +80,8 @@ public class ActionDAO {
                 action.setId(rs.getInt("ID"));
                 action.setName(rs.getString("NAME"));
                 action.setDescription(rs.getString("DESCRIPTION"));
+                action.setStart(rs.getDate("START"));
+                action.setFinish(rs.getDate("FINISH"));
 
                 actions.add(action);
             }
@@ -101,6 +106,8 @@ public class ActionDAO {
                 action.setId(rs.getInt("ID"));
                 action.setName(rs.getString("NAME"));
                 action.setDescription(rs.getString("DESCRIPTION"));
+                action.setStart(rs.getDate("START"));
+                action.setFinish(rs.getDate("FINISH"));
             }
 
             rs.close();

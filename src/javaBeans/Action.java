@@ -6,8 +6,8 @@ public class Action {
         private int id;
         private String name;
         private String description;
-        private Date start;
-        private Date finish;
+        private Date start = null;
+        private Date finish = null;
 
     public Action() {
     }
@@ -75,7 +75,7 @@ public class Action {
 
     @Override
     public String toString() {
-        return "Action {" +
+        return "Action { " +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +

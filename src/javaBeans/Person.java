@@ -9,10 +9,21 @@ public class Person {
     public Person() {
     }
 
+    public Person(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
     public Person(String name, String email, String telephone) {
         this.name = name;
         this.email = email;
         this.telephone = telephone;
+    }
+
+    public Person(int id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
     }
 
     public Person(int id, String email, String telephone, String alias) {

@@ -5,6 +5,29 @@ Challenge sent by Kraft for a program to store, capture and show about ESG.
 
 This is our project and our solution to the project. And our group is 1+ese.
 
+To make this code run you will need to have docker installed.<br>
+
+If you have docker installed, you can clone this repo into your local machine.
+```bash
+$ git clone https://github.com/mahauni/KraftChallenge
+$ cd KraftChallenge
+```
+
+After cloning the repo in your local machine you can build the application in a docker container with:
+```bash
+$ docker-compose up -d
+```
+
+and then in your local machine, with windows, in your browser:
+http://localhost/app <br>
+or in linux you will have to use the ip the that your docker is using:
+http://[docker_ip]/app <br>
+
+After you are done with the application you can stop the docker container and remove the docker image with:
+```bash
+$ docker-compose down && docker image rm tomcat-webapp
+```
+
 ### Done:
  - [x] Connection to the database
  - [x] All DAO for our tables and entities

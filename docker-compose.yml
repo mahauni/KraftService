@@ -6,7 +6,7 @@ services:
     restart: always
     container_name: tomcat-webapp
     build:
-      context: ./src
+      context: br.com.+1ese.esgManeger
     volumes:
       - ./src/app:/usr/local/tomcat/webapps/app
     ports:

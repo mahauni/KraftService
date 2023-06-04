@@ -3,7 +3,9 @@ FIAP Challenge
 
 Challenge sent by Kraft for a program to store, capture and show about ESG.
 
-This is our project and our solution to the project. And our group is 1+ese.
+This is our project and our entitiesSolution to the project. And our group is 1+ese.
+
+Running with Apache Tomcat 10.0 and JRE 8.
 
 To make this code run you will need to have docker installed.<br>
 

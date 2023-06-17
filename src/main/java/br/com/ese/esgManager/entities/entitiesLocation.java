@@ -4,7 +4,7 @@ import br.com.ese.esgManager.dataStructures.ListProfile;
 import br.com.ese.esgManager.javaBeans.jbLocation;
 
 public class entitiesLocation {
-    private jbLocation jbLocation;
+    private br.com.ese.esgManager.javaBeans.jbLocation jbLocation;
     private ListProfile urls;
 
     public entitiesLocation() {

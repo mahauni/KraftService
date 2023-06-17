@@ -5,10 +5,10 @@ import br.com.ese.esgManager.javaBeans.jbLocation;
 import br.com.ese.esgManager.javaBeans.jbProblem;
 
 public class entitiesProblem {
-    private jbProblem jbProblem;
+    private br.com.ese.esgManager.javaBeans.jbProblem jbProblem;
     private jbESG jbEsg;
     private entitiesPerson entitiesPerson;
-    private jbLocation jbLocation;
+    private br.com.ese.esgManager.javaBeans.jbLocation jbLocation;
     private entitiesSolution entitiesSolution;
 
     public entitiesProblem() {

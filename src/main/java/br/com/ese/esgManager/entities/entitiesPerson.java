@@ -5,7 +5,7 @@ import br.com.ese.esgManager.dataStructures.ListProfile;
 import br.com.ese.esgManager.javaBeans.jbPerson;
 
 public class entitiesPerson {
-    private jbPerson jbPerson;
+    private br.com.ese.esgManager.javaBeans.jbPerson jbPerson;
     private ListProfile urls;
     private ListProblem problems;
 

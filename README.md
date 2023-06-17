@@ -32,7 +32,7 @@ $ docker-compose down && docker image rm tomcat-webapp
 
 ### Done:
  - [x] Connection to the database
- - [x] All br.com.ese.esgManager.database.DAO for our tables and br.com.ese.esgManager.entities
+ - [x] All main.java.esgManager.database.DAO for our tables and main.java.esgManager.entities
  - [x] Crated custom data structures for our application (Linked lists for our sprint)
  - [x] Created simple pool of connections to our database
 ### Doing:
@@ -42,5 +42,5 @@ $ docker-compose down && docker image rm tomcat-webapp
  - [ ] Create a display of data
  - [ ] Create a script to make all the Tables and relations for postgres.
  - [ ] Create test (unit, integration test) for our entire application.
- - [ ] Create custom br.com.ese.esgManager.errors and replace it in our codebase.
+ - [ ] Create custom main.java.esgManager.errors and replace it in our codebase.
  - [ ] Create graphs in python to show the results of our data.

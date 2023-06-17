@@ -1,4 +1,4 @@
-package test;
+package br.com.ese.esgManager;
 
 import br.com.ese.esgManager.dataStructures.ListAction;
 import br.com.ese.esgManager.dataStructures.ListProblem;
@@ -82,7 +82,7 @@ public class QueueTests {
             entitiesSolution entitiesSolution = new entitiesSolution(actions);
             entitiesPerson entitiesPerson = new entitiesPerson(new jbPerson(1, "TestName", "TestEmail@gmail.com"), new ListProfile(), new ListProblem());
             int esgInt = rand.nextInt(3);
-            // Using the problem(br.com.ese.esgManager.javaBeans.problem, br.com.ese.esgManager.entities.Person, br.com.ese.esgManager.javaBeans.ESG, br.com.ese.esgManager.javaBeans.Location)
+            // Using the problem(main.java.esgManager.javaBeans.problem, main.java.esgManager.entities.Person, main.java.esgManager.javaBeans.ESG, main.java.esgManager.javaBeans.Location)
             entitiesProblem entitiesProblem = new entitiesProblem(new jbProblem(i, "Problem " + i, rand.nextBoolean(), entitiesPerson.getPerson().getId(), esgInt, 1), entitiesPerson, jbEsgs[esgInt], new jbLocation(), entitiesSolution);
 
             switch (entitiesProblem.getEsg().getEsg()) {

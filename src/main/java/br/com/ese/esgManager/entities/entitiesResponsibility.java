@@ -4,7 +4,7 @@ import br.com.ese.esgManager.dataStructures.ListAction;
 import br.com.ese.esgManager.javaBeans.jbDepartment;
 
 public class entitiesResponsibility {
-    private jbDepartment jbDepartment;
+    private br.com.ese.esgManager.javaBeans.jbDepartment jbDepartment;
     private ListAction responsibility;
 
     public entitiesResponsibility() {

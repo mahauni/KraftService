@@ -1,4 +1,4 @@
-package test;
+package br.com.ese.esgManager;
 
 import br.com.ese.esgManager.database.connection.DatabaseConnection;
 

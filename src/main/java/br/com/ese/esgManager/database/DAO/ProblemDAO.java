@@ -1,7 +1,7 @@
 package br.com.ese.esgManager.database.DAO;
 
-import br.com.ese.esgManager.database.connection.DatabaseConnection;
 import br.com.ese.esgManager.javaBeans.jbProblem;
+import br.com.ese.esgManager.database.connection.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

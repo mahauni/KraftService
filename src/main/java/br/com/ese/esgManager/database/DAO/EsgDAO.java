@@ -1,8 +1,8 @@
 package br.com.ese.esgManager.database.DAO;
 
 import br.com.ese.esgManager.database.connection.DatabaseConnection;
-import br.com.ese.esgManager.enums.enumESG;
 import br.com.ese.esgManager.javaBeans.jbESG;
+import br.com.ese.esgManager.enums.enumESG;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

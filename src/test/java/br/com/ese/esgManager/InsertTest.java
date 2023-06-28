@@ -58,7 +58,7 @@ public class InsertTest {
             esgDao.insert(jbEsg);
         }
 
-        deleteTables();
+        // deleteTables();
     }
 
     private static void createTables() throws SQLException {

@@ -1,6 +1,6 @@
 package br.com.ese.esgManager.database.connection;
 
-import br.com.ese.esgManager.utils.UtilsDotEnv;
+import io.github.cdimascio.dotenv.Dotenv;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -9,13 +9,18 @@ import java.sql.SQLException;
 public class DatabaseConnection {
     private static DataSource connections;
 
+    // for development only
+     private static final Dotenv dotenv = Dotenv.load();
+
     // singleton
     public static Connection connect() throws SQLException {
         if (connections == null) {
-            UtilsDotEnv values = new UtilsDotEnv("./.env");
-            String url = values.getEnv("url");
-            String passwd = values.getEnv("passwd");
-            String user = values.getEnv("user");
+            String url = dotenv.get("url");
+            String passwd = dotenv.get("passwd");
+            String user = dotenv.get("user");
+//            String url = System.getenv("url");
+//            String passwd = System.getenv("passwd");
+//            String user = System.getenv("user");
             DatabasePools pools = new DatabasePools(url, passwd, user);
             connections = pools.getPools();
         }
